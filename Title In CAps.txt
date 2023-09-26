@@ -1,0 +1,28 @@
+In anonymous Function
+
+const a = ["Welcome", "to", "javascript session"];
+
+const b = function(str) {
+  return str
+    .split(" ")
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+};
+const c = a.map(b);
+
+console.log(c);
+-----------------------------------
+In IIFE
+
+const a = ["Welcome", "to", "javascript session"];
+
+const b = (function(arr) {
+  return arr.map(str =>
+    str
+      .split(" ")
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+      .join(" ")
+  );
+})(a);
+
+console.log(b);

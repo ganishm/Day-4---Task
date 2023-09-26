@@ -1,0 +1,42 @@
+In anonymous Function
+
+const arr1 = [1, 3, 8, 10, 15];
+const arr2 = [7, 9, 11, 13, 19];
+
+const a = function(nums1, nums2) {
+  const merged = nums1.concat(nums2);
+  const sorted = merged.sort((a, b) => a - b);
+  const length = sorted.length;
+  
+  if (length % 2 === 0) {
+    const mid1 = sorted[length / 2 - 1];
+    const mid2 = sorted[length / 2];
+    return (mid1 + mid2) / 2;
+  } else {
+    return sorted[Math.floor(length / 2)];
+  }
+};
+const b = a(arr1, arr2);
+
+console.log(b);
+-----------------------------------
+In IIFE
+
+const arr1 = [1, 3, 8, 10, 15];
+const arr2 = [7, 9, 11, 13, 19];
+
+const a = (function(nums1, nums2) {
+  const merged = nums1.concat(nums2);
+  const sorted = merged.sort((a, b) => a - b);
+  const length = sorted.length;
+  
+  if (length % 2 === 0) {
+    const mid1 = sorted[length / 2 - 1];
+    const mid2 = sorted[length / 2];
+    return (mid1 + mid2) / 2;
+  } else {
+    return sorted[Math.floor(length / 2)];
+  }
+})(arr1, arr2);
+
+console.log(a);

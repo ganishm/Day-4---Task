@@ -1,0 +1,21 @@
+In anonymous Function
+
+const a = [1, 2, 2, 3, 4, 4, 5];
+
+const b = function(arr) {
+  return [...new Set(arr)];
+};
+
+const arr = b(a);
+
+console.log(arr);
+-----------------------------------
+In IIFE
+
+const a = [1, 2, 2, 3, 4, 4, 5];
+
+const b = (function(arr) {
+  return [...new Set(arr)];
+})(a);
+
+console.log(b);

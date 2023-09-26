@@ -1,0 +1,29 @@
+In anonymous Function
+
+const arr = [1, 2, 3, 4, 5];
+const k = 2; 
+const a = function(arr, k) {
+  const n = arr.length;
+  k = k % n; 
+
+  const c = [...arr.slice(k), ...arr.slice(0, k)];
+  return c;
+};
+
+const b = a(arr, k);
+
+console.log(b);
+-----------------------------------
+In IIFE
+
+const a = [1, 2, 3, 4, 5];
+const k = 2; 
+const b = (function(arr, k) {
+  const n = arr.length;
+  k = k % n; 
+
+  const c = [...arr.slice(k), ...arr.slice(0, k)];
+  return c;
+})(a, k);
+
+console.log(b);

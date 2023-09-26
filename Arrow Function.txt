@@ -1,0 +1,76 @@
+A.Print Odd Numbers in an Array using Arrow Function:
+
+const a = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+const b = (arr) => {
+  arr.forEach((num) => {
+    if (num % 2 !== 0) {
+      console.log(num);
+    }
+  });
+};
+
+b(a);
+---------------------------------------------------------
+B. Convert All Strings to Title Caps in a String Array using Arrow Function:
+
+const a = ["hello", "welcome to", "javascript session"];
+
+const b = (str) => {
+  return str
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+    .join(" ");
+};
+
+const c = a.map(b);
+
+console.log(c);
+----------------------------------------------------------------------------
+C. Sum of All Numbers in an Array using Arrow Function:
+
+const arr = [1, 2, 3, 4, 5];
+
+const arr1 = (arr) => {
+  return arr.reduce((acc, num) => acc + num, 0);
+};
+
+const result = arr1(arr);
+
+console.log(result);
+---------------------------------------------------------------------
+D. Return All Prime Numbers in an Array using Arrow Function:
+
+const arr1 = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const a = (num) => {
+  if (num <= 1) return false;
+  if (num <= 3) return true;
+
+  if (num % 2 === 0 || num % 3 === 0) return false;
+
+  for (let i = 5; i * i <= num; i += 6) {
+    if (num % i === 0 || num % (i + 2) === 0) return false;
+  }
+
+  return true;
+};
+
+const b = arr1.filter(a);
+
+console.log(b);
+-----------------------------------------------------------------------
+E. Return All Palindromes in an Array using Arrow Function:
+
+const a = ["level", "hello", "deified", "world", "racecar"];
+
+const b = (str) => {
+  const cleanedStr = str.toLowerCase().replace(/[^a-zA-Z0-9]/g, "");
+  const reversedStr = cleanedStr.split("").reverse().join("");
+  return cleanedStr === reversedStr;
+};
+
+const c = a.filter(b);
+
+console.log(c);
+---------------------------------------------------------------------

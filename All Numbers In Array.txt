@@ -1,0 +1,29 @@
+In anonymous Function
+
+const a = [1, 2, 3, 4, 5];
+
+const b = function(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+};
+
+const result = b(a);
+console.log(result);
+---------------------------------------------------
+
+In IIFE
+
+const a = [1, 2, 3, 4, 5];
+
+const result = (function(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum;
+})(a);
+
+console.log(result);

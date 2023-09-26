@@ -1,0 +1,29 @@
+In anonymous Function
+
+const a = ["level", "hello", "deified", "world", "racecar"];
+
+const b = function(str) {
+  const cleanedStr = str.toLowerCase().replace(/[^a-zA-Z0-9]/g, "");
+  const reversedStr = cleanedStr.split("").reverse().join("");
+  return cleanedStr === reversedStr;
+};
+
+const c = a.filter(b);
+
+console.log(c);
+-----------------------------------
+In IIFE
+
+const a = ["level", "hello", "deified", "world", "racecar"];
+
+const c = (function(arr) {
+  const b = function(str) {
+    const cleanedStr = str.toLowerCase().replace(/[^a-zA-Z0-9]/g, "");
+    const reversedStr = cleanedStr.split("").reverse().join("");
+    return cleanedStr === reversedStr;
+  };
+
+  return arr.filter(b);
+})(a);
+
+console.log(c);

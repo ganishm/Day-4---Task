@@ -1,0 +1,43 @@
+In anonymous Function
+
+const arr = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const b = function(num) {
+  if (num <= 1) return false;
+  if (num <= 3) return true;
+
+  if (num % 2 === 0 || num % 3 === 0) return false;
+
+  for (let i = 5; i * i <= num; i += 6) {
+    if (num % i === 0 || num % (i + 2) === 0) return false;
+  }
+
+  return true;
+};
+
+const primeNumbers = arr.filter(b);
+
+console.log(primeNumbers);
+-----------------------------------
+In IIFE
+
+const a = [2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const c = (function(arr) {
+  const b = function(num) {
+    if (num <= 1) return false;
+    if (num <= 3) return true;
+
+    if (num % 2 === 0 || num % 3 === 0) return false;
+
+    for (let i = 5; i * i <= num; i += 6) {
+      if (num % i === 0 || num % (i + 2) === 0) return false;
+    }
+
+    return true;
+  };
+
+  return arr.filter(b);
+})(a);
+
+console.log(c);
